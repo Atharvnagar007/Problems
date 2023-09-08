@@ -73,12 +73,7 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  
-  }
+
+}
 }
 
-
-
-
-
- 

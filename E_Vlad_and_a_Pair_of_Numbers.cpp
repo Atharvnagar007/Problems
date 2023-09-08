@@ -73,12 +73,22 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  
+    int x;
+    cin>>x;
+    if(x%2==1){
+        cout<<-1<<endl;
+        continue;
+    }
+    int a=x/2;
+    int b=x/2;
+    if(a&x){
+        cout<<-1<<endl;
+        continue;
+    }
+    
+    cout<<a+x<<' '<<b<<endl;
   }
 }
 
 
 
-
-
- 

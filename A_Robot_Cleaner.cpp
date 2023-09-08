@@ -73,12 +73,25 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  
+     int n,m,rb,cb,rd,cd;
+     cin>>n>>m>>rb>>cb>>rd>>cd;
+     int minr=-1;
+      int mind=-1;
+     if(rb<=rd){
+        minr=rd-rb;
+     }
+     else {
+        minr=2*n-rb-rd;
+     }
+      if(cb<=cd){
+        mind=cd-cb;
+     }
+     else {
+        mind=2*m-cb-cd;
+     }
+     cout<<min(minr,mind)<<endl;
   }
 }
 
 
 
-
-
- 

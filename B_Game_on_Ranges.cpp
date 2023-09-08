@@ -73,7 +73,33 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  
+  int n;
+  cin>>n;
+  vector<int>l(n),r(n);
+  map<pair<int,int>,int > mp;
+  for(int i=0;i<n;i++){
+    cin>>l[i]>>r[i];
+    mp[{l[i],r[i]}]=1;
+  }
+   for(int i=0;i<n;i++){
+    for(int j=l[i];j<=r[i];j++){
+      if(l[i]==r[i]){
+        cout<<l[i]<<' '<<r[i]<<' '<<l[i]<<endl;
+      }
+      else if(mp[{l[i],j-1}]==1 && mp[{j+1,r[i]}]==1){
+        cout<<l[i]<<' '<<r[i]<<' '<<j<<endl;
+      }
+      else if(mp[{l[i]+1,r[i]}]==1){
+        cout<<l[i]<<' '<<r[i]<<' '<<l[i]<<endl;
+        break;
+      }
+      else if(mp[{l[i],r[i]-1}]==1){
+        cout<<l[i]<<' '<<r[i]<<' '<<r[i]<<endl;
+        break;
+      }
+    }
+   }
+   cout<<endl;
   }
 }
 
