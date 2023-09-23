@@ -73,15 +73,7 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  int a,b;
-  if(b%2!=0){
-    if(b%3==0){
-        cout<<3<<' '<<b-3<<endl;
-    }
-    else{
-        cout<<3<<b-4
-    }
+  
   }
-}
 }
 

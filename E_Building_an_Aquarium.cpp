@@ -70,18 +70,36 @@ using namespace std;
 #define mai map<pair<ll,ll>>
 #define vev vector<vector<ll>>
 const int N=300005;
+int in=(1e9+7);
+bool works(ll mid,vector<ll> &v,int x){
+    ll sum=0;
+    for(auto &a:v){
+      if(a<mid){
+        sum+=mid-a;
+      }
+    }
+    return sum<=x;
+}
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  int a,b;
-  if(b%2!=0){
-    if(b%3==0){
-        cout<<3<<' '<<b-3<<endl;
+  ll n,x;
+  cin>>n>>x;
+  vector<ll> v(n);
+  for(int i=0;i<n;i++)
+{
+  cin>>v[i];
+}  ll low=0,high=2*in;
+  while(low<high){
+    ll mid=low+(high-low+1)/2;
+    if(works(mid,v,x)){
+        low=mid;
     }
     else{
-        cout<<3<<b-4
+        high=mid-1;
     }
   }
-}
+  cout<<low<<endl;
+  }
 }
 

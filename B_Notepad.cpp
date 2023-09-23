@@ -73,15 +73,23 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  int a,b;
-  if(b%2!=0){
-    if(b%3==0){
-        cout<<3<<' '<<b-3<<endl;
-    }
-    else{
-        cout<<3<<b-4
+  int n;
+  cin>>n;
+  string s;
+  cin>>s;
+  bool f=0;
+  for(int i=0;i<n-1;i++){
+    for(int j=i+1;j<n-1;j++){
+        if(s[i]==s[j]){
+            if(s[i+1]==s[j+1] && i+1!=j){
+                f=1;
+                break;
+            }
+        }
     }
   }
+  if(f) cout<<"YES"<<endl;
+  else cout<<"NO"<<endl;
 }
 }
 

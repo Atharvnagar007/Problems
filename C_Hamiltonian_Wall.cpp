@@ -69,19 +69,22 @@ using namespace std;
 #define ma map<ll,ll> 
 #define mai map<pair<ll,ll>>
 #define vev vector<vector<ll>>
-const int N=300005;
+const int N=1e6 + 5;
+char s[2][N];
+int n;
+bool chk(int c){
+  for(int i=1;i<=n;i++){
+    if(s[c][i]=='W') return 0;
+    if(s[!c][i]=='B') c^=1;
+  }
+  return 1;
+}
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  int a,b;
-  if(b%2!=0){
-    if(b%3==0){
-        cout<<3<<' '<<b-3<<endl;
-    }
-    else{
-        cout<<3<<b-4
-    }
-  }
+   cin>>n>>(s[0]+1)>>(s[1]+1);
+   cout<<((chk(0)||chk(1)) ? "YES":"NO")<<endl;
+
 }
 }
 

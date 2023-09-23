@@ -73,15 +73,23 @@ const int N=300005;
 int main(){
 cin.tie(0); cout.tie(0);
   tc(t){
-  int a,b;
-  if(b%2!=0){
-    if(b%3==0){
-        cout<<3<<' '<<b-3<<endl;
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(auto &it:a){
+        cin>>it;
     }
-    else{
-        cout<<3<<b-4
+    ll ans=0;
+    for(int i=0;i<n;i++){
+        a[i]++;
+        ll product=1;
+        for(auto &it:a){
+            product*=it;
+        }
+        ans=max(ans,product);
+        a[i]--;
     }
+    cout<<ans<<endl;
   }
-}
 }
 
