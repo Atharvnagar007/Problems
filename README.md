@@ -1,2 +1,2 @@
 # Problems
-Some practice problems are addded here codeforces
+Some practice problems are added here codeforces
