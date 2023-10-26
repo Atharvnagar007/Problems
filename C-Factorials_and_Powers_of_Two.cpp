@@ -72,9 +72,9 @@ using namespace std;
 const int N=300005;
 ll count(ll x){
   ll c=0;
-  while(x){
-    c+=x&1;
-    c>>=1;
+  while(x>0){
+    x &= (x - 1);
+       c++;
   }
   return c;
 }
